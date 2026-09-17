@@ -1,8 +1,11 @@
 import { MessagesRepository } from './messages.repository';
 
 export class MessagesService {
- 
-constructor(private messagesRepository: MessagesRepository) {}
+  messagesRepository: MessagesRepository;
+
+  constructor() {
+    this.messagesRepository = new MessagesRepository();
+  }
 
   findOne(id: string) {
     return this.messagesRepository.findOne(id);
